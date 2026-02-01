@@ -1,15 +1,12 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const StoreSchema = new mongoose.Schema({
   storeName: String,
   username: String,
   password: String,
   discountCode: String,
-  isActive: {
-    type: Boolean,
-    default: true
-  }
+  isActive: Boolean
 });
 
-module.exports =
-  mongoose.models.Store || mongoose.model("Store", StoreSchema);
+export default mongoose.models.Store ||
+  mongoose.model("store", StoreSchema);
